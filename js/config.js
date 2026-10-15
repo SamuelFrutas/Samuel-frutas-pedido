@@ -1,12 +1,15 @@
-// Copie aqui a configuração Web do Firebase do sistema de Pedidos.
-// Use o mesmo projeto Firebase que já atende a coleção products/config.
 export const PEDIDOS_CONFIG = Object.freeze({
   firebase: Object.freeze({
-    apiKey: 'COLE_AQUI_A_API_KEY_DO_FIREBASE',
+    apiKey: 'AIzaSyB1E9oQsIwYO2-r4W5-uQK4ax92OmxISOI',
     authDomain: 'samuelfrutasbot.firebaseapp.com',
     projectId: 'samuelfrutasbot',
     storageBucket: 'samuelfrutasbot.firebasestorage.app',
     messagingSenderId: '1052699327049',
-    appId: 'COLE_AQUI_O_APP_ID_DO_FIREBASE'
+    appId: '1:1052699327049:web:cf22d68c76d064d56b5d98'
+  }),
+  collections: Object.freeze({
+    products: 'products',
+    orders: 'orders',
+    config: 'config'
   })
 });
