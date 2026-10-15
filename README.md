@@ -10,8 +10,10 @@ Sistema independente da loja de pedidos e do painel de cadastro de produtos.
 - `js/` — Firebase e regras de cálculo compartilhadas
 - `.github/workflows/` — publicação no GitHub Pages
 
-O sistema usa o mesmo projeto Firebase do sistema de pedidos atual, mantendo as coleções `products`, `orders` e `config`.
+## Firebase
 
-## Antes da publicação
+O sistema usa o mesmo projeto Firebase do sistema de Pedidos atual (`samuelfrutasbot`), mantendo separadas as coleções `products`, `orders` e `config`.
 
-Preencha `js/config.js` com a configuração Web atual do Firebase do sistema de Pedidos. O arquivo foi deixado com placeholders para evitar copiar credenciais automaticamente durante a migração.
+O número de WhatsApp usado ao finalizar um pedido é lido de `config/bot.responsibleNumber`. Não existe um número de WhatsApp duplicado neste repositório.
+
+O status da loja também é lido de `config/bot.siteOffline`.
