@@ -1,5 +1,5 @@
 import{db}from'../js/firebase.js';
-import{collection,getDoc,doc,onSnapshot}from'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+import{collection,getDoc,doc,onSnapshot}from'https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js';
 import{calculateItem,deliveryFee,money}from'../js/order-engine.js';
 const CONFIG_COLLECTION='config',CONFIG_ID='bot',LEGACY_CONFIG_ID='_config';
 let products=[],cart=new Map(),siteOffline=false;const $=id=>document.getElementById(id);
