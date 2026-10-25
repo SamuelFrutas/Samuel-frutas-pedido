@@ -1,18 +1,5 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-
-// Login isolado: usa a mesma configuração Firebase do Painel de Pedidos.
-const firebaseConfig = {
-  apiKey: 'AIzaSyAW9727i0X8-yNEsg7KM3WdMZqWgIaUafE',
-  authDomain: 'samuelfrutasbot.firebaseapp.com',
-  projectId: 'samuelfrutasbot',
-  storageBucket: 'samuelfrutasbot.firebasestorage.app',
-  messagingSenderId: '1052699327049',
-  appId: '1:1052699327049:web:cf22d68c76d064d56b5d98'
-};
-
-const app = initializeApp(firebaseConfig, 'samuel-frutas-login');
-const auth = getAuth(app);
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { auth } from '../js/firebase.js?v=5';
 
 const form = document.querySelector('#login');
 const error = document.querySelector('#error');
