@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-import { auth, authReady } from '../js/firebase.js?v=5';
+import { auth, authReady } from '../js/firebase-auth.js';
 
 const form = document.querySelector('#login');
 const error = document.querySelector('#error');
