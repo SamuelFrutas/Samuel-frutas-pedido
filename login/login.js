@@ -1,9 +1,9 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
-// Login isolado: usa exatamente a mesma configuração Firebase do APK do Painel de Pedidos.
+// Login isolado: usa a mesma configuração Firebase do Painel de Pedidos.
 const firebaseConfig = {
-  apiKey: 'AIzaSyB1E9oQsIwYO2-r4W5-uQK4ax92OmxISOI',
+  apiKey: 'AIzaSyAW9727i0X8-yNEsg7KM3WdMZqWgIaUafE',
   authDomain: 'samuelfrutasbot.firebaseapp.com',
   projectId: 'samuelfrutasbot',
   storageBucket: 'samuelfrutasbot.firebasestorage.app',
