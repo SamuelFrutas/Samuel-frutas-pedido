@@ -7,6 +7,8 @@ const app = initializeApp(PEDIDOS_CONFIG.firebase, 'samuel-frutas-pedidos');
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 
-// Garante que a sessão usada pelo login seja a mesma sessão recuperada pelo painel.
-export const authReady = setPersistence(auth, browserLocalPersistence);
+// O módulo só termina de carregar depois que a persistência da sessão estiver pronta.
+// Assim login e painel nunca executam o guard de autenticação antes da sessão ser configurada.
+await setPersistence(auth, browserLocalPersistence);
+export const authReady = Promise.resolve();
 export { app };
