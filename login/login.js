@@ -1,4 +1,4 @@
-import { onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { browserLocalPersistence, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { auth } from '../js/firebase.js?v=5';
 
 const form = document.querySelector('#login');
@@ -34,6 +34,7 @@ form.onsubmit = async e => {
 
   redirecting = true;
   try {
+    await setPersistence(auth, browserLocalPersistence);
     await signInWithEmailAndPassword(auth, email, password);
     location.replace('../painel/admin.html');
   } catch (err) {
