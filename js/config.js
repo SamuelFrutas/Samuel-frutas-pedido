@@ -1,6 +1,6 @@
 export const PEDIDOS_CONFIG = Object.freeze({
   firebase: Object.freeze({
-    apiKey: 'AIzaSyB1E9oQsIwYO2-r4W5-uQK4ax92OmxISOI',
+    apiKey: 'AIzaSyAW9727i0X8-yNEsg7KM3WdMZqWgIaUafE',
     authDomain: 'samuelfrutasbot.firebaseapp.com',
     projectId: 'samuelfrutasbot',
     storageBucket: 'samuelfrutasbot.firebasestorage.app',
