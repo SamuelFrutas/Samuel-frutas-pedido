@@ -1,18 +1,11 @@
-import { browserLocalPersistence, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-import { auth } from '../js/firebase.js?v=5';
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { auth, authReady } from '../js/firebase.js?v=5';
 
 const form = document.querySelector('#login');
 const error = document.querySelector('#error');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 let redirecting = false;
-
-onAuthStateChanged(auth, user => {
-  if (user && !redirecting) {
-    redirecting = true;
-    location.replace('../painel/admin.html');
-  }
-});
 
 const messages = {
   'auth/invalid-credential': 'E-mail ou senha inválidos.',
@@ -25,6 +18,19 @@ const messages = {
   'auth/too-many-requests': 'Muitas tentativas. Aguarde alguns minutos e tente novamente.'
 };
 
+try {
+  await authReady;
+  onAuthStateChanged(auth, user => {
+    if (user && !redirecting) {
+      redirecting = true;
+      location.replace('../painel/admin.html');
+    }
+  });
+} catch (err) {
+  console.error(err);
+  error.textContent = 'Não foi possível preparar a sessão de acesso.';
+}
+
 form.onsubmit = async e => {
   e.preventDefault();
   error.textContent = '';
@@ -34,7 +40,7 @@ form.onsubmit = async e => {
 
   redirecting = true;
   try {
-    await setPersistence(auth, browserLocalPersistence);
+    await authReady;
     await signInWithEmailAndPassword(auth, email, password);
     location.replace('../painel/admin.html');
   } catch (err) {
